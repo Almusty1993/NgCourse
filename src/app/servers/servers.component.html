@@ -1,0 +1,201 @@
+<strong style="color: red;"> Structural Directive Demo - *ngIf </strong>
+
+<h4> *ngIf - Example 1</h4>
+
+<p *ngIf="displayMessage ; else displayElseMessage"> Welcome to the Angular Class </p>
+<!-- <p *ngIf="displayMessage ; else alternate"> Welcome to the Angular Class </p> -->
+
+<!-- <ng-template #alternate> -->
+<ng-template #displayElseMessage>
+  <span>This is Else Block !!</span><br>
+  <p> Welcome to Node JS Class </p>
+</ng-template>
+
+<br>
+
+<h4> *ngIf - Example 2 </h4>
+
+<span *ngIf="displayMessage1 ; else alternate"> Welcome Teacher!! </span>
+
+<ng-template #alternate>
+  <span> Welcome Student!! </span>
+</ng-template>
+
+<br>
+
+<h4> *ngIf - Example 3 </h4>
+
+<label> User Name </label>
+<input type="text" [(ngModel)]="uname">
+<br>
+
+<label> Password </label>
+<input type="text" [(ngModel)]="upass">
+<br>
+
+<button type="button" class="btn btn-primary" (click)="onLogin()">Login</button>
+
+<p *ngIf="displayUserPasswordWarning">Please Enter your Username & Password </p>
+<p *ngIf="displayUsernameWarning">Please Enter your Username </p>
+<p *ngIf="displayPasswordWarning">Please Enter your Password </p>
+<p *ngIf="displayLoginMessage"> Login Successful </p><br>
+
+<hr>
+
+
+<strong style="color: red;"> Structural Directive Demo - *ngFor </strong>
+
+<h4> *ngFor - Example 1 - Loop through the numbers array </h4>
+
+<p *ngFor="let num of numbers">{{num}}</p>
+<br>
+
+
+<h4> *ngFor - Example 2 - Loop through the strings array </h4>
+
+<p *ngFor="let stdname of students">Student name is : {{stdname}}</p>
+
+<br>
+
+<h4> *ngFor - Example 3 - Loop through the array of Objects </h4>
+
+<p *ngFor="let ani of animals"> Animal name is : {{ani.name}}, & Legs count is : {{ani.legs}}</p>
+
+<br>
+
+<h4> *ngFor - Example 4 - Loop through the students array using list</h4>
+
+<ol>
+  <li *ngFor="let emp of employees"> Student Id is :{{emp.id}} Name :{{emp.name}} College :{{emp.college}} </li>
+</ol>
+
+<br>
+<hr>
+
+<h4> *ngFor - Example 5 - Loop through the Mobiles array & displays it in table</h4>
+
+Mobile Make : <input type="text" [(ngModel)]="make">
+Mobile Model : <input type="text" [(ngModel)]="model">
+Mobile Price : <input type="text" [(ngModel)]="price">
+<button type="button" class="btn btn-primary" (click)="onAddInventory()"> Add To Inventory </button><br>
+
+<table>
+  <tr>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let phones of mobiles">
+    <td>{{phones.name}}</td>
+    <td>{{phones.Model}}</td>
+    <td>{{phones.price}}</td>
+  </tr>
+</table>
+
+<br>
+<hr>
+
+<strong style="color: red;"> Attribute Directives</strong>
+
+<h4> Example 1 - ngStyle </h4>
+
+<p [ngStyle]="{backgroundColor : serverStatus == 'Online' ? 'green' : 'red' }"> server status {{serverStatus}}</p>
+
+<br>
+
+<h4> Example 2 - ngStyle </h4>
+<p [ngStyle]="{color : getBgColor()}"> Server Status is : {{serverStatus}}</p>
+
+<br>
+
+<h4> Example 3 - ngStyle </h4>
+<label for=""> Enter Student Name : </label><input type="text" [(ngModel)]="stName">
+<select [(ngModel)]="stResult">
+  <option value="pass">Pass</option>
+  <option value="fail">Fail</option>
+</select>
+
+<span [ngStyle]="{color : getColor()}">{{stName}} {{stResult}}</span>
+
+<br>
+
+<h4> Example 4 - ngStyle </h4>
+
+<table>
+  <tr>
+    <th> Index </th>
+    <th> Student Name </th>
+    <th> Student Id </th>
+    <th> Student Result </th>
+  </tr>
+  <tr *ngFor="let std of MCITStudents; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{std.name}}</td>
+    <td>{{std.id}}</td>
+    <td [ngStyle]="{backgroundColor : std.result == 'pass' ?  'green' : 'red'}">{{std.result}}</td>
+  </tr>
+</table>
+
+<br>
+<hr>
+
+<strong style="color: red;"> Attributes Directive Demo - *ngClass </strong>
+
+<h4> *ngClass - Example 1</h4>
+
+<p [ngClass]="{active : serverStatus == 'online', notactive : serverStatus == 'offline'}"> Server Status is {{serverStatus}} </p>
+
+<br>
+
+<h4> *ngClass - Example 2 </h4>
+
+
+<label> Enter Server Name : </label><input type="text" [(ngModel)]="serverName">
+<label> Enter Status : </label>
+<select [(ngModel)]="srvStatus">
+  <option value="online">online</option>
+  <option value="offline">offline</option>
+</select>
+<button type="submit" (click)="onAddServer()"> Add Server </button>
+
+<table>
+  <tr>
+    <th>Index</th>
+    <th>Server name</th>
+    <th> Status</th>
+  </tr>
+
+  <tr *ngFor="let server of servers; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{server.name}}</td>
+    <td [ngClass]="{active: server.status == 'online',
+                    notactive : server.status == 'offline'}">{{server.status}}</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,240 @@
+<div class="formbold-main-wrapper">
+  <!-- Author: FormBold Team -->
+  <!-- Learn More: https://formbold.com -->
+  <div class="formbold-form-wrapper">
+    <!-- <img src="your-image-url-here.jpg"> -->
+
+      <div class="formbold-input-group">
+        <label for="name" class="formbold-form-label"> Name </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter your name"
+          class="formbold-form-input"
+          [(ngModel)]="userName"
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label for="email" class="formbold-form-label"> Email </label>
+        <input
+          type="email"
+          name="lastname"
+          id="text"
+          placeholder="Enter your email"
+          class="formbold-form-input"
+          [(ngModel)]="userEmail"
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label for="age" class="formbold-form-label"> Age </label>
+        <input
+          type="text"
+          name="age"
+          id="age"
+          placeholder="Enter your age"
+          class="formbold-form-input"
+          [(ngModel)]="userAge"
+        />
+      </div>
+
+      <div class="formbold-input-group">
+        <label class="formbold-form-label">
+          Which option best describes you?
+        </label>
+
+        <select class="formbold-form-select" name="occupation" id="occupation"  [(ngModel)]="userCourse">
+          <option value="Student">Student</option>
+          <option value="designer">UX/UI Designer</option>
+          <option value="fullstack">Full Stack Developer</option>
+          <option value="frontend">Front End Developer</option>
+        </select>
+      </div>
+
+      <div class="formbold-input-radio-wrapper">
+        <label for="ans" class="formbold-form-label">
+          Would you recomend our site to a friend?
+        </label>
+
+        <div class="formbold-radio-flex">
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="ans"
+                id="ans"
+                value="yes"
+                [(ngModel)]="yesNo"
+              />
+              Yes
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="ans"
+                id="ans"
+                value="no"
+                [(ngModel)]="yesNo"
+              />
+              No
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="ans"
+                id="ans"
+                value="maybe"
+                [(ngModel)]="yesNo"
+              />
+              Maybe
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="formbold-input-radio-wrapper">
+        <label class="formbold-form-label">
+          Which languages & freameworks you know?
+        </label>
+
+        <div class="formbold-radio-flex">
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label" for="java">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="java"
+                id="java"
+                value="java"
+                [(ngModel)]="javaSelect"
+              />
+              Java
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label" for="python">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="python"
+                id="python"
+                value="python"
+                [(ngModel)]="pythonSelect"
+              />
+              Python
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label" for="javaScript">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="javaScript"
+                id="javaScript"
+                value="javaScript"
+                [(ngModel)]="javaScriptSelect"
+              />
+              JavaScript
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label" for="react">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="react"
+                id="react"
+                value="react"
+                [(ngModel)]="reactSelect"
+              />
+              React
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+          <div class="formbold-radio-group">
+            <label class="formbold-radio-label" for="angular">
+              <input
+                class="formbold-input-radio"
+                type="radio"
+                name="angular"
+                id="angular"
+                value="angular"
+                [(ngModel)]="angularSelect"
+              />
+              Angular
+              <span class="formbold-radio-checkmark"></span>
+            </label>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div>
+        <label for="message" class="formbold-form-label">
+          Any comments or suggestions
+        </label>
+        <textarea
+          rows="6"
+          name="message"
+          id="message"
+          placeholder="Type here..."
+          class="formbold-form-input"
+          [(ngModel)]="textArea"
+        ></textarea>
+      </div>
+
+      <button class="formbold-btn" (click)="onSubmit()">Submit</button>
+      <hr/> <br/>
+
+      <table>
+          <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Profile</th>
+              <th>Recommend</th>
+              <th>Languages</th>
+              <th>Comments</th>
+          </tr>
+          <tr *ngFor="let all of saves">
+              <td>{{all.userName}}</td>
+              <td>{{all.userEmail}}</td>
+              <td>{{all.userAge}}</td>
+              <td>{{all.userCourse}}</td>
+              <td>{{all.yesNo}}</td>
+              <td>
+                  <ul>
+                      <li *ngFor="let la of all.languages">{{la}}</li>
+                  </ul>
+              </td>
+              <td>{{textArea}}</td>
+
+          </tr>
+      </table>
+  </div>
+
+
+</div>

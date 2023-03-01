@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-6">
+    <span> What would you like to do?</span>
+    <select>
+      <option></option>
+      <option> AddServer </option>
+      <option> DeleteServer </option>
+    </select>
+
+    <div class="form-group row"> <!-- Add server-->
+      <hr/>
+       <strong style="color: green;"> Add Server </strong> <br/> <br/>
+      <div class="col-xs-4">
+        <label for="ex1">Index</label>
+        <input class="form-control" id="ex0" type="text" [(ngModel)]="ind">
+      </div>
+      <div class="col-xs-4">
+        <label for="ex1">Server ID</label>
+        <input class="form-control" id="ex1" type="text" [(ngModel)]="serverID">
+      </div>
+      <div class="col-xs-4">
+        <label for="ex2">Server Name</label>
+        <input class="form-control" id="ex2" type="text" [(ngModel)]="serverName">
+      </div>
+      <div class="col-xs-4">
+        <label for="ex3">Server Content</label>
+        <input class="form-control" id="ex3" type="text" [(ngModel)]="serverContent">
+      </div>
+      <label for="ex3">Server Status : </label>
+      <label class="radio-inline"><input type="radio" name="optradio" value="Online" [(ngModel)]="gender">Online </label>
+      <label class="radio-inline"><input type="radio" name="optradio" value="Offline" [(ngModel)]="gender">Offline</label>
+      <br/>
+      <button class="btn btn-primary" (click)="onSubmit()"> OnSubmit</button>
+    </div>
+
+
+    <div class="form-group row"> <!-- Delete server-->
+      <hr>
+	   <strong style="color: red;"> Delete Server </strong> <br/> <br/>
+
+      <div class="col-xs-4">
+        <label for="ex2">Server ID</label>
+        <input class="form-control" id="ex2" type="text" [(ngModel)]="removeID">
+      </div>
+
+      <br/>
+      <button class="btn btn-primary" (click)="onDelete()"> Delete </button>
+    </div>
+    <hr/>
+
+     <strong style="color: green;" > List of servers </strong> <br/> <br/>
+    <table>
+      <tr>
+        <th> Index </th>
+        <th> Server ID </th>
+        <th> Server Name  </th>
+        <th> Server Content  </th>
+        <th> Status ?  </th>
+      </tr>
+      <tr *ngFor="let network of servers">
+        <td>{{network.Index}}</td>
+        <td>{{network.id}}</td>
+        <td>{{network.name}}</td>
+        <td>{{network.content}}</td>
+        <td *ngIf="showStatus">{{network.status}}</td>
+        <td >
+           <input type="button" value="getStatus" (click)="onShow()"/>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+</div>
+

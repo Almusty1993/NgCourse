@@ -1,0 +1,109 @@
+<!-- One way Data Binding -->
+
+<strong style="color: red;">1-way data binding </strong>
+<br>
+
+Server name is : {{serverName}} <br>
+School name is : {{collegeName}} <br>
+School Year is : {{collegeYear}} <br>
+
+<hr>
+
+<!-- Property Data Binding -->
+
+<strong style="color: red;">Property data binding </strong>
+<br>
+
+<button class="btn btn-warning" [disabled]="flag"> Click Me</button>
+
+
+<hr>
+
+<!-- Event Binding -->
+
+<strong style="color: red;">Event Binding </strong>
+<br>
+
+<button type="submit" (click)="onClick()"> Click Me! </button><br>
+
+
+Enter Name : <input type="text" [(ngModel)]="empname">
+<br>
+
+Entered name is : {{empname}}<br>
+
+
+Enter Name : <input type="text" [(ngModel)]="empname">
+<br>
+Enter Password : <input type="password" [(ngModel)]="emppass">
+<br>
+<button type="submit" (click)="onClick1()"> Login </button>
+<button type="submit" (click)="onClick2()"> Clear </button><br>
+
+
+Entered name is : {{empname}}
+<br> &  password is : {{emppass}}<br>
+
+<hr>
+
+<!-- Handling forms -->
+
+
+<strong style="color: red;"> Handling Multiple Types of Forms </strong>
+
+<div>
+  <label class="col-sm-2">Name:</label>
+  <input type="text" class="sol-sm-10" [(ngModel)]="sname">
+</div>
+
+<div class = "row">
+<legend class="col-sm-2">Gender</legend>
+<div class="sol-sm-10">
+  <input type="radio" name="gender" value="male" [(ngModel)]="gender">
+  <label> Male </label>
+
+  <input type="radio" name="gender" value="female" [(ngModel)]="gender">
+  <label> Female </label>
+</div>
+</div>
+
+<div class="row">
+  <label class="col-sm-2"> Course </label>
+  <select class="col-sm-4" [(ngModel)]="course">
+    <option value="">Chose...</option>
+    <option value="Angular">Angular</option>
+    <option value="Java">Java</option>
+    <option value="nodeJS">nodeJS</option>
+  </select>
+</div>
+
+<div class="row">
+<div class="col-sm-2">
+  <input type="checkbox" [(ngModel)]="online">
+  <label>Online</label>
+</div>
+
+<div class="col-sm-2">
+  <input type="checkbox" [(ngModel)]="offline">
+  <label>Offline</label>
+</div>
+
+<div class="col-sm-2">
+  <input type="checkbox" [(ngModel)]="hybrid">
+  <label>Hybrid</label>
+</div>
+</div>
+
+
+
+<button type="button" (click)="onClick3()">Register</button><br>
+<span style="background-color: aqua;">{{message1}}</span><br>
+<!-- Welcome Student name is : {{sname}}<br>
+Gender is : {{gender}}<br> -->
+<hr>
+
+
+
+
+
+

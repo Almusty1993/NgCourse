@@ -1,0 +1,22 @@
+h2 {
+  color: pink;
+  font-size: large;
+}
+
+p {
+  color: rgb(15, 96, 158);
+  margin-top: 20px;
+}
+
+.Form1 {
+  background-color: cornsilk;
+  height: auto;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+
+

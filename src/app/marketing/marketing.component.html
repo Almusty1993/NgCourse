@@ -1,0 +1,128 @@
+
+
+<!-- One way Data Binding -->
+
+<strong style="color: red;">1-way data binding </strong>
+<br>
+
+Server name is : {{serverName}} <br>
+School name is : {{collegeName}} <br>
+School Year is : {{collegeYear}} <br>
+
+<hr>
+
+<!-- Property Data Binding -->
+
+<strong style="color: red;">Property binding </strong>
+<br>
+
+<button class="btn btn-warning" [disabled]="flag"> Click Me</button>
+
+
+<hr>
+
+<!-- Event Binding -->
+
+<strong style="color: red;">Event Binding </strong>
+<br>
+
+<button type="submit" class="btn btn-primary clic" (click)="onClick()"> Activate </button><br>
+
+
+<!-- Enter Name : <input type="text" [(ngModel)]="empname">
+<br>
+
+Entered name is : {{empname}}<br>
+
+
+  Enter Name : <input type="text" [(ngModel)]="empname">
+  <br>
+  Enter Name : <input type="password" [(ngModel)]="emppass">
+  <br>
+  <button type="submit" (click)="onClick1()"> Login </button>
+  <button type="submit" (click)="onClick2()"> Clear </button><br> -->
+
+
+
+<!-- <p>Entered Username is : {{empname}}
+<br>Password is : {{emppass}}</p><br> -->
+
+<div class="Form1">
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="empname">
+    <label for="floatingInput">User Name</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="emppass">
+    <label for="floatingPassword">Password</label>
+  </div>
+
+  <div style="margin-top: 20px; display: flex; margin-left: 10px;" class="justify-content-end !important" >
+    <button type="submit" class="btn btn-success" style="margin-right: 10px; padding-left: 25px; padding-right: 25px;" (click)="onClick1()">Login</button>
+    <button type="submit" class="btn btn-danger" style="padding-left: 25px; padding-right: 25px;" (click)="onClick2()">Clear</button>
+  </div>
+
+</div>
+
+
+<div style="margin-top: 20px; padding: 20px;">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Password</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>{{empname}}</td>
+        <td>{{emppass}}</td>
+        <td style="width: 20px; height: 20px;">
+          <button style="width: 100%; border: none; background-color: transparent;">
+            <fa-icon style=" color: rgb(69, 153, 213); font-size: 20px;" [icon]="faPen"></fa-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

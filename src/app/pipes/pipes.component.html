@@ -1,0 +1,151 @@
+<strong style="color: red; font-size: 30px;"> Pipe Demo </strong>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3> Uppercase Pipes Example 1</h3>
+      <span> Before pipe {{collegeName}} </span>
+      <br>
+      <span> After applying the uppercase pipe {{collegeName | uppercase}} </span>
+
+<br>
+<hr>
+
+
+<h3> Date Pipe Example 2</h3>
+
+<span> Before applying the date pipe {{da}}</span>
+<br>
+<span> After applying the date pipe {{da | date }}</span>
+<br>
+
+<span> Short Date {{da | date : 'short' }}</span>
+<br>
+<hr>
+
+<h3> Currency Pipe Example 3</h3>
+
+<strong> Currency without pipe => {{Amount}} </strong><br>
+<strong> Currency with as 'CAD' => {{Amount | currency : 'CAD'}}</strong><br>
+<strong> Currency with as 'USD' => {{Amount | currency : 'USD'}}</strong><br>
+<strong> Currency with as 'EUR' => {{Amount | currency : 'EUR'}}</strong><br>
+<hr>
+
+
+<h3> Slice Pipe Example 1</h3>
+
+<ul>
+  <li *ngFor="let server of servers | slice : 1 : 5">
+        server Name is : {{server}}
+  </li>
+</ul>
+
+<hr>
+
+<h3> Slice Pipe Example 2</h3>
+
+<label> Select the number of rows to display </label>
+<select [(ngModel)]="rows">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+<table>
+  <tr>
+    <th> Index </th>
+    <th> Server Name </th>
+  </tr>
+  <tr *ngFor="let server of servers | slice : 0 : rows; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{servers}}</td>
+  </tr>
+</table>
+
+<hr>
+
+<h3> Slice Pipe Example 3</h3>
+
+<label> Select the number of rows to start </label>
+<select [(ngModel)]="rowsstart">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+<label> Select the number of rows to end </label>
+<select [(ngModel)]="rowsend">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+
+
+<table>
+  <tr>
+    <th> Index </th>
+    <th> Server Name </th>
+  </tr>
+  <tr *ngFor="let server of servers | slice : rowsstart : rowsend; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{servers}}</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

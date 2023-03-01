@@ -1,0 +1,12 @@
+
+<div class="sidenav">
+  <a (click)="viewQuestion2()">Question2</a>
+  <a (click)="viewQuestion3()">Question3</a>
+  <a (click)="viewQuestion4()">Question4</a>
+</div>
+<div class="main">
+<div *ngIf="viewQ2"><app-question2></app-question2></div>
+<div *ngIf="viewQ3"><app-question3></app-question3></div>
+<div *ngIf="viewQ4"><app-question4></app-question4></div>
+
+</div>
